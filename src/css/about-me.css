@@ -1,0 +1,338 @@
+@import url('accordion-js/dist/accordion.min.css');
+@import url('swiper/css');
+@import url('swiper/css/navigation');
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.about-me {
+  padding-top: 64px;
+  width: 100%;
+}
+
+.about-me-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  gap: 16px;
+  width: calc(100% - 2 * 16px);
+  margin-bottom: 32px;
+}
+
+.about-me-summary {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 28px;
+  letter-spacing: -0.72px;
+  text-transform: uppercase;
+  padding: 32px 32px 272px 32px;
+  border-radius: 24px;
+  background: #242527;
+}
+
+.about-me-func {
+  color: #ed3b44;
+}
+
+.about-me-ws {
+  color: rgba(250, 250, 250, 0.4);
+}
+
+.about-me-photo {
+  height: 500px;
+  object-fit: cover;
+  border-radius: 24px;
+  background: lightgray 50% / cover no-repeat;
+}
+
+/* **************ACCORDION********** */
+
+.about-me-acc {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  margin-bottom: 32px;
+}
+
+.about-me-acc-el {
+  position: relative;
+  padding-bottom: 32px;
+  transition: margin-bottom 0.3s ease;
+}
+
+.about-me-acc-el-title {
+  color: rgba(250, 250, 250, 0.4);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: -0.32px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.about-me-acc-el-trigger {
+  background: none;
+  border: none;
+  color: rgba(250, 250, 250, 0.4);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: -0.32px;
+  text-transform: uppercase;
+  cursor: pointer;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0;
+}
+
+.about-me-acc-arr {
+  display: flex;
+  width: 36px;
+  height: 36px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 12px;
+  border-radius: 100px;
+  border: 1px solid rgba(250, 250, 250, 0.2);
+}
+
+.about-me-acc-arr.is-hidden {
+  display: none;
+}
+
+.about-me-acc-svg {
+  stroke: rgba(250, 250, 250, 1);
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.about-me-acc-el-descr-frame {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+}
+
+.about-me-acc-el.js-enabled .about-me-acc-el-descr-frame {
+  visibility: hidden;
+}
+
+.about-me-acc-el.is-active .about-me-acc-el-descr-frame {
+  visibility: visible;
+}
+
+.about-me-acc-el-descr {
+  color: #fafafa;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: -0.32px;
+  margin-bottom: 32px;
+}
+
+.about-me-acc-el-descr:last-child {
+  margin-bottom: 0;
+}
+
+.about-me-acc-el.active .about-me-acc-el-descr-frame {
+  display: block;
+  max-height: 1000px;
+  visibility: visible;
+}
+
+.about-me-current {
+  position: relative;
+}
+
+.about-me-current::after {
+  width: 100%;
+  height: 1px;
+  background: rgba(250, 250, 250, 0.2);
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+/* **************SWIPER********** */
+
+.about-me-swiper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 164px;
+}
+
+.about-me-swiper-slide-el-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 130px;
+  height: 130px;
+  border: 1px solid rgba(250, 250, 250, 0.2);
+  border-radius: 100%;
+  text-align: center;
+}
+
+.about-me-swiper .swiper-slide-active {
+  background-color: #ed3b44;
+  border-radius: 100%;
+  border: none;
+}
+
+.about-me-swiper-btn-next {
+  color: transparent;
+  display: block;
+  position: absolute;
+  top: 55%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.about-me-swiper-svg {
+  color: transparent;
+  background-color: transparent;
+  stroke: rgba(59, 59, 59, 1);
+}
+
+.about-me-swiper-svg:hover {
+  stroke: rgba(250, 250, 250, 1);
+}
+
+/* **************MEDIA********** */
+
+@media screen and (min-width: 375px) {
+  .about-me-top {
+    width: 343px;
+  }
+  .about-me-acc {
+    width: 343px;
+  }
+  .about-me-acc-el-descr-frame {
+    width: 343px;
+  }
+  .about-me-swiper {
+    width: 343px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .about-me-swiper .swiper-slide-next + .swiper-slide {
+    opacity: 0;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .about-me-top {
+    width: 704px;
+    margin-bottom: 32px;
+  }
+  .about-me-summary {
+    font-size: 38px;
+    line-height: 40px;
+    letter-spacing: -1.14px;
+    padding: 64px 64px 436px 64px;
+  }
+  .about-me-photo {
+    width: 704px;
+    height: auto;
+  }
+  .about-me-acc {
+    gap: 32px;
+    width: 704px;
+    margin-bottom: 64px;
+  }
+  .about-me-acc-arr {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 8px;
+  }
+  .about-me-acc-el-descr-frame {
+    width: 704px;
+  }
+  .about-me-acc-el-descr {
+    margin-bottom: 16px;
+  }
+  .about-me-swiper {
+    width: 704px;
+  }
+  .about-me-swiper-slide-el-text {
+    width: 200px;
+    height: 200px;
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: -0.4px;
+  }
+  .about-me .container .about-me-swiper .swiper-button-next .about-me-swiper-svg {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1439px) {
+  .about-me-swiper .swiper-slide-next + .swiper-slide + .swiper-slide {
+    opacity: 0;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .about-me {
+    padding-top: 96px;
+  }
+  .about-me-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 16px;
+    width: 100%;
+    margin-bottom: 96px;
+  }
+  .about-me-summary {
+    width: calc((100% - 16px) / 2);
+  }
+  .img-container {
+    width: calc((100% - 16px) / 2);
+  }
+  .about-me-acc {
+    width: 100%;
+    margin-bottom: 96px;
+  }
+  .about-me-acc-el-descr-frame {
+    margin-left: auto;
+    margin-right: 68px;
+    max-width: 612px;
+  }
+  .about-me-acc-el-descr {
+    margin-bottom: 32px;
+  }
+  .about-me-swiper {
+    width: 1312px;
+  }
+  .about-me-swiper
+    .swiper-slide-next
+    + .swiper-slide
+    + .swiper-slide
+    + .swiper-slide
+    + .swiper-slide
+    + .swiper-slide {
+    opacity: 0;
+  }
+}
